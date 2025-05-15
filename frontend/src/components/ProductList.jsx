@@ -9,7 +9,7 @@ const ProductList = ({ productOpenAdd, productOpenEdit }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/product"); 
+        const response = await axios.get("/api/product"); 
         setproductData(response.data); 
       } catch (err) {
         seterror(err.message);
@@ -30,7 +30,7 @@ const ProductList = ({ productOpenAdd, productOpenEdit }) => {
     if (confirmDelete) {
       try {
         const response = await axios.delete(
-          `http://localhost:3000/api/product/${id}`
+          `/api/product/${id}`
         );
         console.log("Server response:", response.data);
 

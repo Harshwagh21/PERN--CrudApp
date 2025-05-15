@@ -11,7 +11,7 @@ const CategoryList = ({ catOpenAdd, catOpenEdit }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/category");
+        const response = await axios.get("/api/category");
         setcategoryData(response.data);
       } catch (err) {
         seterror(err.message);
@@ -36,7 +36,7 @@ const CategoryList = ({ catOpenAdd, catOpenEdit }) => {
     if (confirmDelete) {
       try {
         const response = await axios.delete(
-          `http://localhost:3000/api/category/${id}`
+          `/api/category/${id}`
         );
         console.log("Server response:", response.data);
 

@@ -31,19 +31,19 @@ function App() {
     try {
       if (catAdd === "add") {
         const response = await axios.post(
-          "http://localhost:3000/api/category",
+          "/api/category",
           newClientData
         );
         console.log("Category added:", response.data);
 
         // After adding, refetch the category data
         const updatedResponse = await axios.get(
-          "http://localhost:3000/api/category"
+          "/api/category"
         );
         setcategoryData(updatedResponse.data); // Update state with the new data
       } else {
         const response = await axios.put(
-          `http://localhost:3000/api/category/${newClientData.categoryid}`,
+          `/api/category/${newClientData.categoryid}`,
           newClientData
         );
         console.log("Category edited:", response.data);
@@ -70,7 +70,7 @@ function App() {
         setproductData(updatedResponse.data); // Update state with the new data
       } else {
         const response = await axios.put(
-          `http://localhost:3000/api/product/${newProductData.productid}`,
+          `/api/product/${newProductData.productid}`,
           newProductData
         );
         console.log("Product edited:", response.data);
